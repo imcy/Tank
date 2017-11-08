@@ -21,6 +21,8 @@ public:
 // ÷ÿ–¥
 public:
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
 //  µœ÷
 public:
 	virtual ~CMainFrame();

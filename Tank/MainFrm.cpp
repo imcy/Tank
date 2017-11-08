@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "Tank.h"
-
+#include <direct.h>
 #include "MainFrm.h"
 
 #ifdef _DEBUG
@@ -20,6 +20,8 @@ IMPLEMENT_DYNAMIC(CMainFrame, CFrameWnd)
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
 	ON_WM_TIMER()
+	ON_WM_MOUSEMOVE()
+	ON_WM_LBUTTONUP()
 END_MESSAGE_MAP()
 
 // CMainFrame 构造/析构
@@ -40,6 +42,22 @@ CMainFrame::CMainFrame()
 		MoveWindow(&reFrame, TRUE); //设置窗口位置和大小
 	}
 }
+CMainFrame::~CMainFrame()
+{
+	
+}
+
+int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+	if (CFrameWnd::OnCreate(lpCreateStruct) == -1) {
+		return -1;
+	}
+	SetTimer(ETimerIdGameLoop, 0, NULL); //启动定时器每次都会进入游戏帧
+	m_game.SetHandle(GetSafeHwnd()); //在游戏中设置主窗口句柄
+	char buff[1000];
+	_getcwd(buff, 1000);
+	return 0;
+}
 
 void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 {
@@ -55,20 +73,19 @@ void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 	default:
 		break;
 	}
-	CMainFrame::OnTimer(nIDEvent);
+	CFrameWnd::OnTimer(nIDEvent);
 }
 
-CMainFrame::~CMainFrame()
+void CMainFrame::OnMouseMove(UINT nFlags, CPoint point)
 {
-	
+	/*直接调用CGame的方法*/
+	m_game.OnMouseMove(nFlags, point); 
+	CFrameWnd::OnMouseMove(nFlags, point);
 }
 
-int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
+void CMainFrame::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
-		return -1;
-	return 0;
-	SetTimer(ETimerIdGameLoop, 0, NULL); //启动定时器每次都会进入游戏帧
-	m_game.SetHandle(GetSafeHwnd()); //设置主窗口句柄
+	/*直接调用CGame的方法*/
+	m_game.OnButtonUp(nFlags, point);
+	CFrameWnd::OnLButtonUp(nFlags, point);
 }
-

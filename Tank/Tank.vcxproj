@@ -182,16 +182,41 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bot.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameEntry.h" />
+    <ClInclude Include="GameEntryMoveable.h" />
+    <ClInclude Include="GameHit.h" />
+    <ClInclude Include="GameMap.h" />
+    <ClInclude Include="GameMenuBackground.h" />
+    <ClInclude Include="GameMenuPanel.h" />
+    <ClInclude Include="GamePathFinder.h" />
+    <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="KeyMenuPlayer01.h" />
+    <ClInclude Include="KeyMenuPlayer02.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tank.h" />
+    <ClInclude Include="TankEntry.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bot.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameEntryMoveable.cpp" />
+    <ClCompile Include="GameHit.cpp" />
+    <ClCompile Include="GameMap.cpp" />
+    <ClCompile Include="GameMenuBackground.cpp" />
+    <ClCompile Include="GameMenuPanel.cpp" />
+    <ClCompile Include="KeyMenuPlayer01.cpp" />
+    <ClCompile Include="KeyMenuPlayer02.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -199,6 +224,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="TankEntry.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Tank.rc" />

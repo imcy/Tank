@@ -33,15 +33,49 @@
 
 #include <afxcontrolbars.h>     // 功能区和控件条的 MFC 支持
 #include <gdiplus.h>
+#include <cassert>
+#include <cmath>
+#include <algorithm>
+#include <deque>
+#include <exception>
+#include <fstream>
+#include <functional>
+#include <ios>
+#include <iostream>
+#include <istream>
+#include <iterator>
+#include <limits>
+#include <list>
+#include <locale>
+#include <map>
+#include <memory>
+#include <numeric>
+#include <ostream>
+#include <queue>
+#include <random>
+#include <regex>
+#include <set>
+#include <stack>
+#include <string>
+#include <strstream>
+#include <tuple>
+#include <vector>
+
+using namespace std;
 #pragma comment(lib,"Gdiplus.lib")
 using namespace Gdiplus; //使用Gdiplus命名空间
 
+#define PI 3.14159265357f
 
+typedef struct PathNode { //代表地图坐标点
+	int x;
+	int y;
+} PathNode;
 
+typedef std::vector<PathNode> VPath;   //由坐标点组成的路径保存在vector中
 
-
-
-
+// 删除内存的宏 
+#define SAFE_DEL_PTR(ptr) if((ptr) != nullptr){delete ptr;ptr= nullptr;}
 
 
 #ifdef _UNICODE
