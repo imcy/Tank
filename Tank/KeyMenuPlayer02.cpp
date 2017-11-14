@@ -4,20 +4,12 @@
 
 CKeyMenuPlayer02::CKeyMenuPlayer02()
 {
-    m_img[0] = Image::FromFile(_T("menu_key_player02_0.png"));
-    m_img[1] = Image::FromFile(_T("menu_key_player02_1.png"));
-    if(m_img[0]) {
-        RectF rc = {800 - 100, 600 - 40
-                    , static_cast<float>(m_img[0]->GetWidth())
-                    , static_cast<float>(m_img[0]->GetHeight())
-                   };
-        SetRect(rc);
-    }
+    m_img[0] = Image::FromFile(_T("./images/menu_key_player02_0.png"));
 }
 
 CKeyMenuPlayer02::~CKeyMenuPlayer02()
 {
-
+	
 }
 
 void CKeyMenuPlayer02::Draw(Graphics &gh) const
@@ -36,4 +28,19 @@ void CKeyMenuPlayer02::Draw(Graphics &gh) const
     if(m_time.IsTimeval()) {
         bFlag = !bFlag;
     }
+}
+
+void CKeyMenuPlayer02::getImage()
+{
+	if (m_img[0] == NULL) {
+		m_img[0] = Image::FromFile(_T("./images/menu_key_player02_0.png"));
+		m_img[1] = Image::FromFile(_T("./images/menu_key_player02_1.png"));
+		if (m_img[0]) {
+			RectF rc = { 800 - 100, 600 - 40
+				, static_cast<float>(m_img[0]->GetWidth())
+				, static_cast<float>(m_img[0]->GetHeight())
+			};
+			SetRect(rc);
+		}
+	}
 }

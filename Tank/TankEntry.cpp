@@ -11,21 +11,7 @@ CTankEntry::CTankEntry(float x, float y, PCTSTR szImgName)
 {
 	//此处非常有问题，需要修改
     m_imgTank = Image::FromFile(szImgName);
-	imgName = szImgName;
-	xn = x;
-	yn = y;
-}
-
-CTankEntry::~CTankEntry()
-{
-
-}
-
-
-void CTankEntry::getImage()
-{
-	if (m_imgTank == NULL) {
-		m_imgTank = Image::FromFile(imgName);
+	if (m_imgTank != NULL) {
 		for (int i = 0; i < _countof(m_imgExplosion); ++i) {
 			TCHAR szPath[MAX_PATH];
 			_stprintf_s(szPath, _T("./images/%d.gif"), i);
@@ -35,8 +21,8 @@ void CTankEntry::getImage()
 		int height = m_imgTank->GetHeight();
 
 		// 计算 坦克 前占用的区域
-		RectF r(static_cast<float>(xn)
-			, static_cast<float>(yn)
+		RectF r(static_cast<float>(x)
+			, static_cast<float>(y)
 			, static_cast<float>(width)
 			, static_cast<float>(height));
 		SetRect(r);
@@ -55,6 +41,12 @@ void CTankEntry::getImage()
 		}
 	}
 }
+
+CTankEntry::~CTankEntry()
+{
+
+}
+
 // 画自己
 void CTankEntry::Draw(Gdiplus::Graphics &gh) const
 {

@@ -12,7 +12,6 @@ public:
     CTankEntry(float x, float y, PCTSTR szImgName);
     virtual ~CTankEntry();
     virtual void Draw(Gdiplus::Graphics &gh) const;
-	void getImage();
     // 设置开枪间隔时间
     void SetFireTimeval(unsigned long timeval);
 
@@ -74,8 +73,5 @@ private:
 
     // 爆炸时间
     CGameTimer m_timerBomb;
-	PCTSTR imgName;
-	float xn;
-	float yn;
 };
 

@@ -22,6 +22,7 @@ public:
     {
         return m_bStop;
     }
+	void getImage();
 
 private:
     mutable CGameTimeval m_time{300};

@@ -12,7 +12,7 @@ public:
 
     // »­
     virtual void Draw(Gdiplus::Graphics &gh) const;
-
+	void getImage();
     // Í£Ö¹¶¯»­
     void SetStop(bool bStop = true)
     {

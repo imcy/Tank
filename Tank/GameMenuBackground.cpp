@@ -14,7 +14,6 @@ CGameMenuBackground::~CGameMenuBackground()
 
 void CGameMenuBackground::Draw(Graphics &gh) const
 {
-
 	// ªÊ÷∆±≥æ∞Õº∆¨	
 	gh.DrawImage(m_imgBackground, m_rect);  
 }

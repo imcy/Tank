@@ -4,17 +4,23 @@
 
 CKeyMenuPlayer01::CKeyMenuPlayer01()
 {
-    m_img[0] = Image::FromFile(_T("menu_key_player01_0.png"));
-    m_img[1] = Image::FromFile(_T("menu_key_player01_1.png"));
-    if(m_img[0]) {
-        RectF rc = {800 - 100, 600 - 40
-                    , static_cast<float>(m_img[0]->GetWidth())
-                    , static_cast<float>(m_img[0]->GetHeight())
-                   };
-        SetRect(rc);
-    }
+    m_img[0] = Image::FromFile(_T("./images/menu_key_player01_0.png"));
 }
 
+void CKeyMenuPlayer01::getImage()
+{
+	if (m_img[0] == NULL) {
+		m_img[0] = Image::FromFile(_T("./images/menu_key_player01_0.png"));
+		m_img[1] = Image::FromFile(_T("./images/menu_key_player01_1.png"));
+		if (m_img[0]) {
+			RectF rc = { 800 - 100, 600 - 40
+				, static_cast<float>(m_img[0]->GetWidth())
+				, static_cast<float>(m_img[0]->GetHeight())
+			};
+			SetRect(rc);
+		}
+	}
+}
 CKeyMenuPlayer01::~CKeyMenuPlayer01()
 {
 
@@ -38,3 +44,4 @@ void CKeyMenuPlayer01::Draw(Graphics &gh) const
         bFlag = !bFlag;
     }
 }
+
