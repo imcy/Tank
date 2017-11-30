@@ -3,13 +3,13 @@
 
 照着书上的教程写的一个坦克大战的游戏项目。有两个部分一个是人机大战一个是双人对战。其中人机大战用到了一些自动寻路的代码。
 完成图片：<br>
-![]https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_140126.png <br>
+![](https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_140126.png) <br>
 菜单选择:<br>
-![]https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_140138.png<br>
+![](https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_140138.png)<br>
 确认进入游戏:<br>
-![]https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_144959.png<br>
+![](https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_144959.png)<br>
 游戏界面:<br>
-![]https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_140211.png<br>
+![](https://github.com/imcy/Tank/blob/master/%E5%AE%8C%E6%88%90%E5%9B%BE%E7%89%87/2017-11-30_140211.png)<br>
 
 ### MainFrm
 主界面，MFC主程序,构造函数中设置窗口
